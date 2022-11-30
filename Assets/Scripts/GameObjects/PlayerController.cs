@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class CameraMove : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
-    [SerializeField] LayerMask CameraSliderLayerMask;
     public bool movable = true;
     float prevX = 0;
 
-    public float boundG = 0;
-    public float boundD = 0;
+    [SerializeField] float boundL;
+    [SerializeField] float boundR;
     /*private bool stopG = false;
     private bool stopD = false;*/
 
@@ -30,7 +29,6 @@ public class CameraMove : MonoBehaviour
                 if (prevX != 0)
                 {
                     float deltaX = prevX - Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
-
                     /*if (stopG == true)
                     {
                         if(deltaX < 0)
@@ -44,16 +42,22 @@ public class CameraMove : MonoBehaviour
                             deltaX = 0;
                         }
                     }*/
-
                     Camera.main.transform.Translate(deltaX, 0, 0);
-
-
                 }
                 prevX = Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
                 
             }
         }
         
+        /******LIMITES DE MOUVEMENT******/
+        if (transform.position.x <= boundL)
+        {
+            transform.position = new Vector3 (boundL, transform.position.y, transform.position.z);
+        }
+        if (transform.position.x >= boundR)
+        {
+            transform.position = new Vector3(boundR, transform.position.y, transform.position.z);
+        }
 
 
     }

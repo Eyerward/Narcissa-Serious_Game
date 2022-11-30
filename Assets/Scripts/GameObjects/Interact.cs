@@ -25,7 +25,7 @@ public class Interact : MonoBehaviour
         //}
     }
 
-    private void OnMouseDown()
+    private void OnMouseUp()
     {
         Collect();
     }
@@ -33,7 +33,5 @@ public class Interact : MonoBehaviour
     void Collect()
     {
         Destroy(gameObject);
-        gameManager.valeur++;
-        Debug.Log(gameManager.valeur);
     }
 }
