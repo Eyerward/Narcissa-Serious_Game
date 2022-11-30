@@ -8,8 +8,11 @@ public class CameraMove : MonoBehaviour
     [SerializeField] LayerMask CameraSliderLayerMask;
     public bool movable = true;
     float prevX = 0;
-    private bool stopG = false;
-    private bool stopD = false;
+
+    public float boundG = 0;
+    public float boundD = 0;
+    /*private bool stopG = false;
+    private bool stopD = false;*/
 
 
     void Update()
@@ -28,7 +31,7 @@ public class CameraMove : MonoBehaviour
                 {
                     float deltaX = prevX - Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
 
-                    if (stopG == true)
+                    /*if (stopG == true)
                     {
                         if(deltaX < 0)
                         {
@@ -40,9 +43,8 @@ public class CameraMove : MonoBehaviour
                         {
                             deltaX = 0;
                         }
-                    }
+                    }*/
 
-                    Debug.Log(deltaX);
                     Camera.main.transform.Translate(deltaX, 0, 0);
 
 
@@ -56,7 +58,7 @@ public class CameraMove : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("WallG")){
             stopG = true;
@@ -65,9 +67,9 @@ public class CameraMove : MonoBehaviour
             stopD = true;
         }
         
-    }
+    }*/
 
-    private void OnTriggerExit(Collider other)
+    /*private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("WallG"))
         {
@@ -77,13 +79,11 @@ public class CameraMove : MonoBehaviour
         {
             stopD = false;
         }
-    }
+    }*/
 
-    public Vector3 ChangePlace(Vector3 newPlace)
+    public void ChangePlace(Vector3 newPlace)
     {
         transform.position = newPlace;
-
-        return transform.position;
     }
 
 }
