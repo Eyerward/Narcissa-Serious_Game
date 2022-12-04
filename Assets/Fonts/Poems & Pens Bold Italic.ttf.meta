@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 2df8c8d03a4d7cd41a1515983c17eaf8
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Poems & Pens Bold Italic
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 2ca43f516571ef24aabda6a67cbc5465, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -12,12 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/MAP.unity
     guid: 3f90105a8a329af4697d6243ff3a8505
   - enabled: 1
-    path: Assets/Scenes/Place01.unity
+    path: Assets/Scenes/01Fountain.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/Place02.unity
+    path: Assets/Scenes/02WireTree.unity
     guid: 9baf1492ba7f0fd40aa4e6dc99fd0c5d
   - enabled: 1
-    path: Assets/Scenes/Place03.unity
+    path: Assets/Scenes/03GreenHouse.unity
     guid: b7ed43e037f8b2f48879b7ac60c7a158
   m_configObjects: {}
