@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public bool movable = true;
     float prevX = 0;
+    Vector3 oldPos;
 
     [SerializeField] float boundL;
     [SerializeField] float boundR;
@@ -29,19 +30,7 @@ public class PlayerController : MonoBehaviour
                 if (prevX != 0)
                 {
                     float deltaX = prevX - Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
-                    /*if (stopG == true)
-                    {
-                        if(deltaX < 0)
-                        {
-                            deltaX =0;
-                        }
-                    }else if (stopD == true)
-                    {
-                        if (deltaX > 0)
-                        {
-                            deltaX = 0;
-                        }
-                    }*/
+                    
                     Camera.main.transform.Translate(deltaX, 0, 0);
                 }
                 prevX = Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
@@ -62,31 +51,9 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    /*private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("WallG")){
-            stopG = true;
-        }else if (other.CompareTag("WallD"))
-        {
-            stopD = true;
-        }
-        
-    }*/
-
-    /*private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("WallG"))
-        {
-            stopG = false;
-        }
-        else if (other.CompareTag("WallD"))
-        {
-            stopD = false;
-        }
-    }*/
-
     public void ChangePlace(Vector3 newPlace)
     {
+        oldPos = transform.position;
         transform.position = newPlace;
     }
 

@@ -17,6 +17,6 @@ public class MovePlace : MonoBehaviour
     {
         playerController.ChangePlace(newPlace.transform.position);
         playerController.movable= moveCam;
-        Debug.Log("Pasta");
+        Debug.Log(newPlace.transform.position.x);
     }
 }

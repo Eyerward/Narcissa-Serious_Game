@@ -20,4 +20,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/03GreenHouse.unity
     guid: b7ed43e037f8b2f48879b7ac60c7a158
+  - enabled: 1
+    path: Assets/Scenes/04Observatory.unity
+    guid: f03eadfb42dc9b84380791c7681fe34d
+  - enabled: 1
+    path: Assets/Scenes/05Grave.unity
+    guid: bd8275928f5e45a46b6e10ed06de7dc3
+  - enabled: 1
+    path: Assets/Scenes/06Ginkgo.unity
+    guid: 54beb4297c5e1a24dbc9f67037fbb14c
   m_configObjects: {}
