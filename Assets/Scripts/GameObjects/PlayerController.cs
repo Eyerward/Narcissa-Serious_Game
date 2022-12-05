@@ -36,25 +36,38 @@ public class PlayerController : MonoBehaviour
                 prevX = Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
                 
             }
+            Debug.Log(prevX);
+            /*if (transform.position.x <= boundL)
+            {
+                transform.position = new Vector3(boundL, transform.position.y, transform.position.z);
+            }
+            if (transform.position.x >= boundR)
+            {
+                transform.position = new Vector3(boundR, transform.position.y, transform.position.z);
+            }*/
         }
         
         /******LIMITES DE MOUVEMENT******/
-        if (transform.position.x <= boundL)
-        {
-            transform.position = new Vector3 (boundL, transform.position.y, transform.position.z);
-        }
-        if (transform.position.x >= boundR)
-        {
-            transform.position = new Vector3(boundR, transform.position.y, transform.position.z);
-        }
+        
 
 
     }
 
+    /*SE CONCENTRE SUR UN OBJET PARTICULIER DANS UNE SCENE*/
     public void ChangePlace(Vector3 newPlace)
     {
         oldPos = transform.position;
         transform.position = newPlace;
+        prevX = 0;
+        Debug.Log(oldPos);
+    }
+
+    /*REVIENT SUR LA SCENE PRINCIPALE*/
+    public void Revenir()
+    {
+        transform.position = oldPos;
+        prevX = 0;
+        Debug.Log(oldPos);
     }
 
 }

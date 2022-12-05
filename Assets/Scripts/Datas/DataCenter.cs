@@ -9,5 +9,6 @@ public class DataCenter : Singleton<DataCenter>
     public override void Awake()
     {
         base.Awake();
+        playerController = FindObjectOfType<PlayerController>();
     }
 }

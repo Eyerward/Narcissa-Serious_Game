@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4701429135749712831}
   - component: {fileID: 4701429135749712830}
   - component: {fileID: 4701429135749712825}
+  - component: {fileID: 530412980612450766}
   m_Layer: 0
   m_Name: MoveBack
   m_TagString: Untagged
@@ -98,3 +99,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 9.240002, y: 5.8500013, z: 0.19999999}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &530412980612450766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4701429135749712827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b99c8fade8760de489b948f433d6464d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveCam: 1

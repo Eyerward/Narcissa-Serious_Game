@@ -6,21 +6,16 @@ using UnityEngine;
 public class MoveBack : MonoBehaviour
 {
     PlayerController playerController;
-    Vector3 oldPos;
-    bool moveCam;
+    [SerializeField] bool moveCam;
 
     private void Awake()
     {
         playerController = FindObjectOfType<PlayerController>();
     }
-    public void GetPlayerPosition(Vector3 PlayerPose)
-    {
-        oldPos = PlayerPose;
-    }
 
-    private void OnMouseUp()
+    private void OnMouseUpAsButton()
     {
-        playerController.ChangePlace(oldPos);
+        playerController.Revenir();
         playerController.movable = moveCam;
     }
 }

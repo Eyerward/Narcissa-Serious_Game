@@ -13,10 +13,9 @@ public class MovePlace : MonoBehaviour
         playerController = FindObjectOfType<PlayerController>();
     }
 
-    private void OnMouseUp()
+    private void OnMouseUpAsButton()
     {
         playerController.ChangePlace(newPlace.transform.position);
         playerController.movable= moveCam;
-        Debug.Log(newPlace.transform.position.x);
     }
 }
