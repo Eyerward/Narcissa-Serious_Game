@@ -6,28 +6,43 @@ using DG.Tweening.Core.Easing;
 
 public class Wheel : MonoBehaviour
 {
-    public float numValue;
+    PadLock padLock;
+    public int numValue;
     public float rotate= 0;
+    public bool stillUnlocked = true;
 
-    private void Start()
+    private void Awake()
+    {
+        padLock = FindObjectOfType<PadLock>();
+    }
+
+    void Start()
     {
         numValue = 0;
-        numValue.ToString();
     }
+
     private void OnMouseDown()
     {
-        rotate -= 36f;
-        //if (rotate <= -360) rotate = 0;
-        DOTween.Kill(gameObject);
-        Quaternion quat = Quaternion.Euler(rotate, 0, 0);
-        transform.DOLocalRotateQuaternion(quat, 0.5f).SetEase(Ease.OutBounce);
-        Debug.Log(rotate);
+        if (stillUnlocked)
+        {
+            rotate -= 36f;
+            if (rotate <= -360) rotate = 0;
+            DOTween.Kill(gameObject);
+            Quaternion quat = Quaternion.Euler(rotate, 0, 0);
+            transform.DOLocalRotateQuaternion(quat, 0.5f).SetEase(Ease.OutBounce).OnComplete(ChangeValue);
+        }
     }
 
     void ChangeValue()
     {
         numValue++;
+        if (numValue >= 10)
+        {
+            numValue = 0;
+        }
+        padLock.TryToUnlock();
     }
+
 
     private void Update()
     {

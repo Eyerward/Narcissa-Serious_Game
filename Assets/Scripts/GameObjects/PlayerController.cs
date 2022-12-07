@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using DG.Tweening;
+using DG.Tweening.Core.Easing;
 
 public class PlayerController : MonoBehaviour
 {
     public bool movable = true;
+    bool smooth = true;
     float prevX = 0;
     Vector3 oldPos;
+    float deltaX;
 
     [SerializeField] float boundL;
     [SerializeField] float boundR;
@@ -23,32 +27,43 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.touchCount == 0)
             {
+                //Debug.Log(deltaX);
                 prevX = 0;
+                DOTween.Kill(gameObject);
+                if (smooth)
+                {
+                    smooth= false;
+                    
+                }
             }
             else
             {
+                smooth = true;
                 if (prevX != 0)
                 {
-                    float deltaX = prevX - Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
+                    deltaX = prevX - Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
                     
                     Camera.main.transform.Translate(deltaX, 0, 0);
+
+                    //Camera.main.transform.DOMoveX(Camera.main.transform.position.x + deltaX, 0.2f);
                 }
                 prevX = Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
                 
             }
-            Debug.Log(prevX);
-            /*if (transform.position.x <= boundL)
+            //Debug.Log(prevX);
+            /******LIMITES DE MOUVEMENT******/
+            if (transform.position.x <= boundL)
             {
                 transform.position = new Vector3(boundL, transform.position.y, transform.position.z);
             }
+
             if (transform.position.x >= boundR)
             {
                 transform.position = new Vector3(boundR, transform.position.y, transform.position.z);
-            }*/
+            }
         }
-        
-        /******LIMITES DE MOUVEMENT******/
-        
+
+
 
 
     }
