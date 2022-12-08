@@ -440,6 +440,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2121354053994852535, guid: a63a0309d0dca994a89e4ff551570dc1, type: 3}
+      propertyPath: combination
+      value: 1234
+      objectReference: {fileID: 0}
     - target: {fileID: 2121354053994852537, guid: a63a0309d0dca994a89e4ff551570dc1, type: 3}
       propertyPath: m_Name
       value: NumLock
