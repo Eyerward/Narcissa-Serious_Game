@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 98703553}
   m_Layer: 0
-  m_Name: Pos0
+  m_Name: Pos00
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -151,8 +151,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 1993836331}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 40, y: 48, z: 0}
 --- !u!1 &165305614
 GameObject:
@@ -199,7 +199,7 @@ Transform:
   m_Children:
   - {fileID: 444147417}
   m_Father: {fileID: 1999651134}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &165305617
 MonoBehaviour:
@@ -491,7 +491,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &440276791
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -519,7 +519,7 @@ Transform:
   m_Children:
   - {fileID: 1909164525}
   m_Father: {fileID: 1999651134}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &440276793
 MonoBehaviour:
@@ -683,7 +683,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1243050488
 GameObject:
@@ -717,7 +717,7 @@ Transform:
   m_Children:
   - {fileID: 170403317}
   m_Father: {fileID: 1999651134}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1243050490
 BoxCollider:
@@ -762,7 +762,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1414945429
 Transform:
   m_ObjectHideFlags: 0
@@ -777,7 +777,7 @@ Transform:
   m_Children:
   - {fileID: 2140650015}
   m_Father: {fileID: 1999651134}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1414945430
 BoxCollider:
@@ -887,7 +887,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1999651134}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1600467694
 GameObject:
@@ -1072,7 +1072,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1925988787
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1100,7 +1100,7 @@ Transform:
   m_Children:
   - {fileID: 1600467695}
   m_Father: {fileID: 1999651134}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 70, z: 0}
 --- !u!114 &1925988789
 MonoBehaviour:
@@ -1199,6 +1199,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 40, y: 48, z: 0}
+--- !u!1 &1993836330
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1993836331}
+  m_Layer: 0
+  m_Name: CamPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1993836331
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993836330}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 98703553}
+  m_Father: {fileID: 1999651134}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1999651133
 GameObject:
   m_ObjectHideFlags: 0
@@ -1227,6 +1259,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1993836331}
   - {fileID: 1571466499}
   - {fileID: 1243050489}
   - {fileID: 165305616}
@@ -1254,7 +1287,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &2118456722
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1282,7 +1315,7 @@ Transform:
   m_Children:
   - {fileID: 413229624}
   m_Father: {fileID: 1999651134}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 26.305, z: 0}
 --- !u!114 &2118456724
 MonoBehaviour:
