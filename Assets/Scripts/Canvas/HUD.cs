@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class HUD : MonoBehaviour
 {
+    PlayerController playerController;
+
+    private void Awake()
+    {
+        playerController = FindObjectOfType<PlayerController>();
+    }
     public void GoToMap()
     {
         SceneManager.LoadScene("MAP");
@@ -13,5 +19,11 @@ public class HUD : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("02WireTree");
+    }
+
+    public void MoveBack()
+    {
+        playerController.Revenir();
+        playerController.movable = true;
     }
 }

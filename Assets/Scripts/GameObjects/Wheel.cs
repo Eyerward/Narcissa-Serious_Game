@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,7 +30,8 @@ public class Wheel : MonoBehaviour
             if (rotate <= -360) rotate = 0;
             DOTween.Kill(gameObject);
             Quaternion quat = Quaternion.Euler(rotate, 0, 0);
-            transform.DOLocalRotateQuaternion(quat, 0.5f).SetEase(Ease.OutBounce).OnComplete(ChangeValue);
+            transform.DOLocalRotateQuaternion(quat, 0.5f).SetEase(Ease.OutBounce);
+            ChangeValue();
         }
     }
 
@@ -43,9 +45,9 @@ public class Wheel : MonoBehaviour
         padLock.TryToUnlock();
     }
 
-
-    private void Update()
+    public void PadUnlocked()
     {
-
+        DOTween.Kill(gameObject);
+        stillUnlocked = false;
     }
 }

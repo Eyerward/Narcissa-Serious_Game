@@ -68,13 +68,18 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public void MovableCamera()
+    {
+        movable = true;
+    }
+
     /*SE CONCENTRE SUR UN OBJET PARTICULIER DANS UNE SCENE*/
     public void ChangePlace(Vector3 newPlace)
     {
         oldPos = transform.position;
         transform.position = newPlace;
         prevX = 0;
-        Debug.Log(oldPos);
+        // Debug.Log(oldPos);
     }
 
     /*REVIENT SUR LA SCENE PRINCIPALE*/
@@ -82,7 +87,7 @@ public class PlayerController : MonoBehaviour
     {
         transform.position = oldPos;
         prevX = 0;
-        Debug.Log(oldPos);
+        // Debug.Log(oldPos);
     }
 
 }

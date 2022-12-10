@@ -4,27 +4,34 @@ using UnityEngine;
 
 public class PadLock : MonoBehaviour
 {
+    PlayerController playerController;
     [SerializeField] string combination;
     [SerializeField] Wheel wheel1;
     [SerializeField] Wheel wheel2;
     [SerializeField] Wheel wheel3;
     [SerializeField] Wheel wheel4;
-    [SerializeField] GameObject winText;
+    [SerializeField] GameObject moveTo;
 
     
     public void TryToUnlock()
     {
-        Debug.Log("TRYOUT");
+        // Debug.Log("TRYOUT");
 
         if (wheel1.numValue.ToString() + wheel2.numValue.ToString() + wheel3.numValue.ToString() + wheel4.numValue.ToString() == combination)
         {
-            Unlocked();
+            Invoke("Unlocked", 0.5f);
+            wheel1.PadUnlocked();
+            wheel2.PadUnlocked();
+            wheel3.PadUnlocked();
+            wheel4.PadUnlocked();
         }
     }
 
     void Unlocked()
     {
         Debug.Log("UNLOCKED");
-        winText.SetActive(true);
+        FindObjectOfType<PlayerController>().Revenir();
+        FindObjectOfType<Chest>().OpenChest();
+        moveTo.SetActive(false);
     }
 }
