@@ -7,17 +7,26 @@ using DG.Tweening.Core.Easing;
 
 public class PlayerController : MonoBehaviour
 {
+    DataCenter dataCenter;
     public bool movable = true;
     bool smooth = true;
     float prevX = 0;
     Vector3 oldPos;
     float deltaX;
 
-    [SerializeField] float boundL;
-    [SerializeField] float boundR;
+    [SerializeField] float boundL = 0;
+    [SerializeField] float boundR = 0;
     /*private bool stopG = false;
     private bool stopD = false;*/
 
+    private void Awake()
+    {
+        dataCenter = FindObjectOfType<DataCenter>();
+    }
+
+    private void Start()
+    {
+    }
 
     void Update()
     {
