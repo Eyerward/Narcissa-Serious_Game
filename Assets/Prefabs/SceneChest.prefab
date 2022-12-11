@@ -109,8 +109,8 @@ Transform:
   m_GameObject: {fileID: 6908015779652616928}
   m_LocalRotation: {x: -0.06578537, y: 0.27680692, z: -0.014873757, w: 0.9585557}
   m_LocalPosition: {x: -5.96, y: -2.996, z: -1.22}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.68999994, y: 0.69, z: 0.69}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6364864719383291543}
   - {fileID: 6908015778178779840}
@@ -225,3 +225,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0929ce519c25e646b823454fc781b2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzle: {fileID: 0}

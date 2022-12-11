@@ -7,6 +7,7 @@ using UnityEngine;
 public class PuzzleReveal : MonoBehaviour
 {
     [SerializeField] GameObject player;
+    [SerializeField] GameObject hud;
     void EndAnim()
     {
         DOTween.Kill(gameObject);
@@ -35,5 +36,6 @@ public class PuzzleReveal : MonoBehaviour
         transform.DOMoveY(-7, 1f).SetEase(Ease.InBack);
         transform.DOScale(new Vector3(0.5f, 0.5f, 0.5f), 1f).SetEase(Ease.InQuad);
         Invoke("Final", 1f);
+        hud.SetActive(true);
     }
 }

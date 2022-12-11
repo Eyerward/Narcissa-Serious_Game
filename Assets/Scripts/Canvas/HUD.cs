@@ -18,7 +18,7 @@ public class HUD : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("02WireTree");
+        SceneManager.LoadScene("00Gate");
     }
 
     public void MoveBack()
