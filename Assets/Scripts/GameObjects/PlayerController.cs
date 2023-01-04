@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using DG.Tweening;
 using DG.Tweening.Core.Easing;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    DataCenter dataCenter;
     public bool movable = true;
     bool smooth = true;
     float prevX = 0;
@@ -21,11 +21,19 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        dataCenter = FindObjectOfType<DataCenter>();
+        oldPos = DataCenter.Instance.oldPos;
     }
 
     private void Start()
     {
+        if(SceneManager.GetActiveScene().name == DataCenter.Instance.sceneName)
+        {
+            transform.position = DataCenter.Instance.playerPos;
+        } 
+        /*else
+        {
+            DataCenter.Instance.sceneName = SceneManager.GetActiveScene().name;
+        }*/
     }
 
     void Update()
@@ -54,7 +62,6 @@ public class PlayerController : MonoBehaviour
                     
                     Camera.main.transform.Translate(deltaX, 0, 0);
 
-                    //Camera.main.transform.DOMoveX(Camera.main.transform.position.x + deltaX, 0.2f);
                 }
                 prevX = Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
                 
@@ -86,6 +93,7 @@ public class PlayerController : MonoBehaviour
     public void ChangePlace(Vector3 newPlace)
     {
         oldPos = transform.position;
+        DataCenter.Instance.oldPos = oldPos;
         transform.position = newPlace;
         prevX = 0;
         // Debug.Log(oldPos);
@@ -99,4 +107,4 @@ public class PlayerController : MonoBehaviour
         // Debug.Log(oldPos);
     }
 
-}
+}////END

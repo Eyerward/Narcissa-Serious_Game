@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class DataCenter : Singleton<DataCenter>
 {
-    PlayerController playerController;
-    float gateBoundL = -5;
-    float gateBoundR = 5;
+
+    public string sceneName;
+    public Vector3 playerPos;
+    public Vector3 oldPos;
+
+    public float gateBoundL = -5;
+    public float gateBoundR = 5;
 
     public override void Awake()
     {
         base.Awake();
-        playerController = FindObjectOfType<PlayerController>();
     }
 
     public void SetBounds(float boundL, float boundR)
     {
-        boundL = gateBoundL;
-        boundR = gateBoundR;
+        gateBoundL = boundL;
+        gateBoundR = boundR;
     }
 }

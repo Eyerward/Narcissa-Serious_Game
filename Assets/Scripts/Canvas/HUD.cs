@@ -13,6 +13,8 @@ public class HUD : MonoBehaviour
     }
     public void GoToMap()
     {
+        DataCenter.Instance.playerPos = playerController.transform.position;
+        DataCenter.Instance.sceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene("MAP");
     }
 
@@ -25,5 +27,10 @@ public class HUD : MonoBehaviour
     {
         playerController.Revenir();
         playerController.movable = true;
+    }
+
+    public void GoBackToScene()
+    {
+        SceneManager.LoadScene(DataCenter.Instance.sceneName);
     }
 }
