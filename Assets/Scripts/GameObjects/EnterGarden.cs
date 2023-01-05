@@ -5,8 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class EnterGarden : MonoBehaviour
 {
+    public bool unlocked = false;
     private void OnMouseUpAsButton()
     {
-        SceneManager.LoadScene("01Fountain");
+        if (unlocked)
+        {
+            SceneManager.LoadScene("01Fountain");
+        }
+        else
+        {
+            Debug.Log("Not Yet");
+        }
+    }
+
+    public void CanEnter()
+    {
+        unlocked = true;
     }
 }

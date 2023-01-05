@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class DoorLock : MonoBehaviour
 {
-    PlayerController playerController;
     [SerializeField] string combination;
     [SerializeField] DoorWheel wheel1;
     [SerializeField] DoorWheel wheel2;
     [SerializeField] DoorWheel wheel3;
     [SerializeField] DoorWheel wheel4;
-    [SerializeField] GameObject activate;
+    EnterGarden enterGarden;
     [SerializeField] GameObject moveTo;
+
+    private void Awake()
+    {
+        enterGarden = FindObjectOfType<EnterGarden>();
+    }
 
     public void TryToUnlock()
     {
@@ -31,7 +35,7 @@ public class DoorLock : MonoBehaviour
     {
         Debug.Log("UNLOCKED");
         FindObjectOfType<PlayerController>().Revenir();
-        activate.SetActive(true);
+        enterGarden.CanEnter();
         moveTo.SetActive(false);
     }
 }
