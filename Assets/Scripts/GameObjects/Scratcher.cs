@@ -11,16 +11,17 @@ public class Scratcher : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (scratchCount >= 3)
+        if (scratchCount >= 4)
         {
-            transform.eulerAngles = new Vector3(0, 0, -4);
-            DOTween.Kill(gameObject);
-            Quaternion quat = Quaternion.Euler(0, 0, 0);
-            transform.DOLocalRotateQuaternion(quat, 0.5f).SetEase(Ease.OutBounce);
+            
         }
         else
         {
             scratchCount++;
+            transform.eulerAngles = new Vector3(0, 0, scratchCount*4);
+            DOTween.Kill(gameObject);
+            Quaternion quat = Quaternion.Euler(0, 0, 0);
+            transform.DOLocalRotateQuaternion(quat, 0.3f).SetEase(Ease.OutElastic);
         }
     }
 }
