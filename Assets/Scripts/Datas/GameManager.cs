@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] GameObject place1;
+    [SerializeField] GameObject place2;
+    [SerializeField] GameObject place3;
+    [SerializeField] GameObject place4;
+    [SerializeField] GameObject place5;
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (DataCenter.Instance.wireTree) place1.SetActive(true);
+        if (DataCenter.Instance.greenhouse) place2.SetActive(true);
+        if (DataCenter.Instance.observatory) place3.SetActive(true);
+        if (DataCenter.Instance.ginkgo) place4.SetActive(true);
+        if (DataCenter.Instance.grave) place5.SetActive(true);
     }
 }

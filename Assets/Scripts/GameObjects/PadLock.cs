@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PadLock : MonoBehaviour
 {
-    PlayerController playerController;
     [SerializeField] string combination;
     [SerializeField] Wheel wheel1;
     [SerializeField] Wheel wheel2;

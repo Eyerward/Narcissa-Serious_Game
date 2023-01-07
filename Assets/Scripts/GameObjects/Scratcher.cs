@@ -7,17 +7,18 @@ using UnityEngine.UIElements;
 
 public class Scratcher : MonoBehaviour
 {
-    [SerializeField] GameObject scratchFX;
     int scratchCount = 0;
+    [SerializeField] GameObject activate;
 
     private void OnMouseDown()
     {
         if (scratchCount >= 4)
         {
             DOTween.Kill(gameObject);
-            GameObject Burst = Instantiate(scratchFX);
-            Burst.transform.position = transform.position;
-            Destroy(gameObject);
+            transform.DOMoveZ(transform.position.z - 1, 0.4f).SetEase(Ease.InBack);
+            transform.DOMoveY(-10, 1f).SetEase(Ease.InBack).OnComplete(EndAnim);
+            activate.SetActive(true);
+            FindObjectOfType<PuzzleReveal>().Reveal();
         }
         else
         {
@@ -27,5 +28,10 @@ public class Scratcher : MonoBehaviour
             Quaternion quat = Quaternion.Euler(0, 0, 0);
             transform.DOLocalRotateQuaternion(quat, 0.5f).SetEase(Ease.OutElastic);
         }
+    }
+
+    void EndAnim()
+    {
+        Destroy(gameObject);
     }
 }

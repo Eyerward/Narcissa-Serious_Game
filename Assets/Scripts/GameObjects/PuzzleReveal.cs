@@ -33,6 +33,8 @@ public class PuzzleReveal : MonoBehaviour
     }
     private void OnMouseUpAsButton()
     {
+        DataCenter.Instance.LevelUp();
+        Debug.Log(DataCenter.Instance.level);
         transform.DOMoveY(-7, 1f).SetEase(Ease.InBack);
         transform.DOScale(new Vector3(0.5f, 0.5f, 0.5f), 1f).SetEase(Ease.InQuad);
         Invoke("Final", 1f);

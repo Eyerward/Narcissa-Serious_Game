@@ -29,11 +29,7 @@ public class PlayerController : MonoBehaviour
         if(SceneManager.GetActiveScene().name == DataCenter.Instance.sceneName)
         {
             transform.position = DataCenter.Instance.playerPos;
-        } 
-        /*else
-        {
-            DataCenter.Instance.sceneName = SceneManager.GetActiveScene().name;
-        }*/
+        }
     }
 
     void Update()
@@ -105,6 +101,10 @@ public class PlayerController : MonoBehaviour
         transform.position = oldPos;
         prevX = 0;
         // Debug.Log(oldPos);
+    }
+    public void ObsPos()
+    {
+        transform.position = new Vector3(-4f, 0, -4.5f);
     }
 
 }////END

@@ -27,7 +27,6 @@ public class Wheel : MonoBehaviour
 
         if (stillUnlocked)
         {
-            Debug.Log("Bool Active");
             rotate -= 36f;
             if (rotate <= -360) rotate = 0;
             DOTween.Kill(gameObject);
